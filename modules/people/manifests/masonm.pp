@@ -20,6 +20,12 @@ class people::masonm {
     require => Vcsrepo[$dotfiles],
   }
 
+  vcsrepo { "${home}/.oh-my-zsh":
+    ensure   => present,
+    source   => 'https://github.com/MasonM/oh-my-zsh.git',
+    provider => git,
+  }
+
   class { 'osx::global::natural_mouse_scrolling':
     enabled => false
   }
