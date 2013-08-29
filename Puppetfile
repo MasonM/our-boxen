@@ -36,6 +36,7 @@ github "virtualbox", "1.0.5"
 github "vagrant",    "2.0.10"
 github "adium",      "1.1.1"
 github "thunderbird","1.0.1", :repo =>  "magicmonty/puppet-thunderbird"
+github "spotify",    "1.0.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

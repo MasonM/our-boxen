@@ -1,5 +1,7 @@
 # Mason's stuff
 class people::masonm {
+  include spotify
+
   $home = "/Users/${::boxen_user}"
   $coding = "${home}/coding"
   $dotfiles = "${coding}/dotfiles"
