@@ -25,4 +25,10 @@ class people::masonm {
   }
 
   include osx::finder::unhide_library
+
+  package { 'Evoluent Mouse':
+    ensure   => installed,
+    source   => 'http://www.evoluent.com/download/EvoluentVerticalMouseDeviceController1.0.8f1_10_6.dmg',
+    provider => 'appdmg',
+  }
 }
