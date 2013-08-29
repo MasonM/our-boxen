@@ -23,4 +23,6 @@ class people::masonm {
   class { 'osx::global::natural_mouse_scrolling':
     enabled => false
   }
+
+  include osx::finder::unhide_library
 }
