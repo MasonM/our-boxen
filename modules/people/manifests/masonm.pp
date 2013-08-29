@@ -4,20 +4,11 @@ class people::masonm {
 
   $home = "/Users/${::boxen_user}"
   $coding = "${home}/coding"
-  $dotfiles = "${coding}/dotfiles"
 
-  file { $coding:
-    ensure  => directory
-  }
-
-  vcsrepo { $dotfiles:
-    ensure   => present,
-    source   => 'https://bitbucket.org/MasonM/dotfiles',
-    provider => hg,
-  }
-
-  exec { "${dotfiles}/copy.sh":
-    require => Vcsrepo[$dotfiles],
+  file {
+    $coding: ensure => directory;
+    "${coding}/asci": ensure => directory;
+    "${home}/asci": target => "${coding}/asci";
   }
 
   vcsrepo { "${home}/.oh-my-zsh":
@@ -26,8 +17,25 @@ class people::masonm {
     provider => git,
   }
 
+  $dotfiles = "${coding}/dotfiles"
+  vcsrepo { $dotfiles:
+    ensure   => present,
+    source   => 'https://bitbucket.org/MasonM/dotfiles',
+    provider => hg,
+  }
+  ->
+  exec { "${dotfiles}/copy.sh": }
+
+  # OS X specific stuff
   class { 'osx::global::natural_mouse_scrolling':
     enabled => false
+  }
+
+  package { 'Time Out':
+    ensure   => installed,
+    source   => 'http://www.dejal.com/download/?prod=timeout&vers=1.7.1&lang=en&op=getnow&ref=timeout',
+    provider => 'compressed_app',
+    flavor   => 'zip',
   }
 
   include osx::finder::unhide_library
