@@ -37,6 +37,8 @@ github "vagrant",    "2.0.10"
 github "adium",      "1.1.1"
 github "thunderbird","1.0.1", :repo =>  "magicmonty/puppet-thunderbird"
 github "spotify",    "1.0.1"
+github "zsh",        "1.0.0"
+github "screen",     "1.0.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.

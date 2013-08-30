@@ -1,6 +1,7 @@
 # Mason's stuff
 class people::masonm {
   include spotify
+  include zsh
 
   $home = "/Users/${::boxen_user}"
   $coding = "${home}/coding"

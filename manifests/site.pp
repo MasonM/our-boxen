@@ -61,6 +61,7 @@ node default {
   include keepassx
   include adium
   include thunderbird
+  include screen
 
   package { 'FileZilla':
     ensure   => installed,
