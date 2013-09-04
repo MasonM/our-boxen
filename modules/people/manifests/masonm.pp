@@ -44,6 +44,6 @@ class people::masonm {
   package { 'Evoluent Mouse':
     ensure   => installed,
     source   => 'http://www.evoluent.com/download/EvoluentVerticalMouseDeviceController1.0.8f1_10_6.dmg',
-    provider => 'appdmg',
+    provider => 'pkgdmg',
   }
 }
