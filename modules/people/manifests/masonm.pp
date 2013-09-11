@@ -12,12 +12,6 @@ class people::masonm {
     "${home}/asci": target => "${coding}/asci";
   }
 
-  vcsrepo { "${home}/.oh-my-zsh":
-    ensure   => present,
-    source   => 'https://github.com/MasonM/oh-my-zsh.git',
-    provider => git,
-  }
-
   $dotfiles = "${coding}/dotfiles"
   vcsrepo { $dotfiles:
     ensure   => present,
