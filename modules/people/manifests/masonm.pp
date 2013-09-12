@@ -4,7 +4,7 @@ class people::masonm {
   include zsh
 
   $home = "/Users/${::boxen_user}"
-  $coding = "${home}/coding"
+  $coding = "${home}/src"
 
   file {
     $coding: ensure => directory;
